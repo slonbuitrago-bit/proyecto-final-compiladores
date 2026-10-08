@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compiladores — Proyecto del curso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#inicio" class="logo">
+            <span class="logo-bracket">&lt;</span>Compiladores<span class="logo-bracket">/&gt;</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <ul class="menu" id="menuPrincipal">
+            <li><a href="#ruta">Ruta</a></li>
+            <li><a href="#temas">Temas</a></li>
+            <li><a href="#trabajos">Trabajos</a></li>
+            <li><a href="#laboratorio">Laboratorio</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#progreso">Progreso</a></li>
+            <li><a href="#demo">Demo</a></li>
+        </ul>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" fill="currentColor"/></svg>
+        </button>
+    </nav>
+
+    <main>
+
+        <!-- ===== INICIO ===== -->
+        <section id="inicio" class="hero">
+            <div class="hero-grid">
+                <div class="hero-texto">
+                    <p class="hero-kicker">$ proyecto --curso compiladores</p>
+                    <h1>Un compilador se construye en fases.<br>Este sitio también.</h1>
+                    <p class="hero-desc">
+                        Este es el proyecto que voy construyendo y alimentando durante todo el curso de
+                        <strong>Compiladores</strong>: cada tema, cada práctica y cada actividad se incorpora aquí
+                        a medida que avanza el semestre, igual que un programa fuente atraviesa las fases de un compilador
+                        hasta convertirse en algo ejecutable.
+                    </p>
+                    <div class="hero-acciones">
+                        <a href="#ruta" class="boton boton-primario">Ver la ruta de aprendizaje</a>
+                        <a href="#temas" class="boton boton-secundario">Explorar temas</a>
+                    </div>
+                </div>
+
+                <div class="terminal" id="terminalDemo" aria-hidden="true">
+                    <div class="terminal-barra">
+                        <span class="terminal-punto rojo"></span>
+                        <span class="terminal-punto amarillo"></span>
+                        <span class="terminal-punto verde"></span>
+                        <span class="terminal-titulo">build.log</span>
+                    </div>
+                    <div class="terminal-cuerpo" id="terminalCuerpo"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RUTA DE APRENDIZAJE ===== -->
+        <section id="ruta" class="seccion">
+            <div class="seccion-encabezado">
+                <h2>Ruta de aprendizaje</h2>
+                <p>El avance del curso, mostrado como las fases de un pipeline de compilación.</p>
+            </div>
+
+            <div class="pipeline" id="pipeline">
+                <a class="etapa" data-estado="completada" href="#temas">
+                    <div class="etapa-nodo">01</div>
+                    <h3>Fundamentos</h3>
+                    <p>Qué es un compilador y para qué sirve.</p>
+                    <span class="etapa-estado">Completada</span>
+                </a>
+                <a class="etapa" data-estado="completada" href="#temas">
+                    <div class="etapa-nodo">02</div>
+                    <h3>Conceptos</h3>
+                    <p>Fases: léxico, sintáctico, semántico, optimización, generación de código.</p>
+                    <span class="etapa-estado">Completada</span>
+                </a>
+                <a class="etapa" data-estado="completada" href="#trabajos">
+                    <div class="etapa-nodo">03</div>
+                    <h3>Prácticas</h3>
+                    <p>Talleres, parciales y ejercicios aplicados de análisis de código.</p>
+                    <span class="etapa-estado">Completada</span>
+                </a>
+                <a class="etapa" data-estado="completada" href="#laboratorio">
+                    <div class="etapa-nodo">04</div>
+                    <h3>Proyecto</h3>
+                    <p>Construcción de este sitio y su laboratorio de librerías.</p>
+                    <span class="etapa-estado">Completada</span>
+                </a>
+                <a class="etapa" data-estado="completada" href="#demo">
+                    <div class="etapa-nodo">05</div>
+                    <h3>Proyecto final</h3>
+                    <p>Video listo</p>
+                    <span class="etapa-estado">Completada</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== TEMAS / CONTENIDO ===== -->
+        <section id="temas" class="seccion seccion-alterna">
+            <div class="seccion-encabezado">
+                <h2>Temas</h2>
+                <p>Los contenidos se agregan a medida que avanzan las clases. Cada tema es un módulo independiente.</p>
+            </div>
+
+            <div class="buscador">
+                <input type="search" id="buscadorTemas" placeholder="Buscar un tema..." aria-label="Buscar temas">
+            </div>
+
+            <div class="acordeon" id="acordeonTemas">
+                <!-- Se genera automáticamente desde js/contenido.js -->
+            </div>
+        </section>
+
+        <!-- ===== TRABAJOS / ACTIVIDADES ===== -->
+        <section id="trabajos" class="seccion">
+            <div class="seccion-encabezado">
+                <h2>Trabajos y actividades</h2>
+                <p>Las actividades desarrolladas durante el curso, con su objetivo, tecnologías y archivos originales.</p>
+            </div>
+
+            <div class="filtros" id="filtrosTrabajos">
+                <button class="filtro activo" data-filtro="todos">Todos</button>
+                <button class="filtro" data-filtro="teoria">Teoría</button>
+                <button class="filtro" data-filtro="practica">Práctica</button>
+            </div>
+
+            <div class="tarjetas" id="listaTrabajos">
+                <!-- Se genera automáticamente desde js/contenido.js -->
+            </div>
+        </section>
+
+        <!-- ===== LABORATORIO DE LIBRERÍAS ===== -->
+        <section id="laboratorio" class="seccion seccion-alterna">
+            <div class="seccion-encabezado">
+                <h2>Laboratorio de librerías</h2>
+                <p id="laboratorioIntro">Un recorrido por las librerías gráficas de Python: qué son, para qué sirven y cómo se usan, con la presentación y la profundización de cada una.</p>
+            </div>
+
+            <article class="tarjeta-trabajo tarjeta-laboratorio-docs">
+                <span class="tarjeta-etiqueta">Material general</span>
+                <h3>Documentos del laboratorio</h3>
+                <p>El enunciado del taller de exposición, la introducción general a las librerías gráficas y el cuestionario teórico — en PDF, con vista previa y descarga.</p>
+                <button class="tarjeta-boton" data-detalle="lab-documentos">Ver documentos</button>
+            </article>
+
+            <div class="video-caja video-caja-laboratorio">
+                <div class="video-marcador video-marcador-activo">
+                    <iframe
+                        width="100%"
+                        height="400"
+                        src="https://www.youtube.com/embed/HY2JwsHq884"
+                        title="Video explicativo de las librerías"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-detalle">
+                    <h3>Video explicativo de las librerías</h3>
+                    <p>
+                        En este video explico de manera clara y sencilla las principales librerías utilizadas
+                        en el desarrollo del proyecto. Presento qué es cada librería, cuál es su función y
+                        por qué fue necesario utilizarla dentro de la aplicación.
+                    </p>
+                    <p>
+                        También muestro de forma práctica cómo se utilizan estas librerías y qué herramientas
+                        o funcionalidades aportan al proyecto. Explico las diferencias entre ellas y la
+                        importancia que tiene cada una para que el programa pueda funcionar correctamente.
+                    </p>
+                    <p>
+                        La explicación está realizada con mis propias palabras, buscando demostrar no solo
+                        cómo se utilizaron las librerías, sino también la comprensión de su propósito y de
+                        la manera en que contribuyen al funcionamiento general del proyecto.
+                    </p>
+                </div>
+            </div>
+
+            <div class="laboratorio-encabezado-grid">
+                <h3>Las 11 librerías</h3>
+                <p>Cada tarjeta abre su presentación de Genially (o Slides) junto con una profundización escrita: función, estructura, entornos de aplicación y un ejemplo de código.</p>
+            </div>
+
+            <div class="tarjetas" id="listaLaboratorio">
+                <!-- Se genera automáticamente desde js/contenido.js -->
+            </div>
+        </section>
+
+        <!-- ===== MODAL DE DETALLE ===== -->
+        <dialog id="modalDetalle" class="modal">
+            <div class="modal-barra">
+                <span class="modal-punto rojo"></span>
+                <span class="modal-punto amarillo"></span>
+                <span class="modal-punto verde"></span>
+                <span class="modal-titulo" id="modalTitulo"></span>
+                <button class="modal-cerrar" id="modalCerrar" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="modal-cuerpo" id="modalCuerpo"></div>
+        </dialog>
+
+        <!-- ===== QUIZ ===== -->
+        <section id="quiz" class="seccion seccion-alterna">
+            <div class="seccion-encabezado">
+                <h2>Quiz</h2>
+                <p>Elige una categoría y pon a prueba lo visto en el curso, con retroalimentación en cada pregunta.</p>
+            </div>
+
+            <div class="quiz-categorias" id="quizCategorias"></div>
+
+            <div class="quiz-caja" id="quizCaja">
+                <div class="quiz-progreso">
+                    <span id="quizContador">Pregunta 1 de 3</span>
+                    <div class="quiz-barra"><div class="quiz-barra-relleno" id="quizBarra"></div></div>
+                </div>
+
+                <div id="quizPregunta"></div>
+
+                <div class="quiz-resultado" id="quizResultado" hidden>
+                    <h3 id="quizResultadoTitulo"></h3>
+                    <p id="quizResultadoTexto"></p>
+                    <button class="boton boton-primario" id="quizReiniciar">Reintentar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROGRESO ===== -->
+        <section id="progreso" class="seccion">
+            <div class="seccion-encabezado">
+                <h2>Progreso del proyecto</h2>
+                <p>Estado general de avance durante el curso.</p>
+            </div>
+
+            <div class="progreso-grid" id="progresoGrid">
+                <div class="progreso-tarjeta">
+                    <span class="progreso-numero" id="progresoTemas">—</span>
+                    <span class="progreso-etiqueta">Temas agregados</span>
+                </div>
+                <div class="progreso-tarjeta">
+                    <span class="progreso-numero" id="progresoTrabajos">—</span>
+                    <span class="progreso-etiqueta">Actividades documentadas</span>
+                </div>
+                <div class="progreso-tarjeta">
+                    <span class="progreso-numero" id="progresoAvance">—</span>
+                    <span class="progreso-etiqueta">Avance general</span>
+                </div>
+                <div class="progreso-tarjeta">
+                    <span class="progreso-numero" id="progresoUltima">—</span>
+                    <span class="progreso-etiqueta">Última actividad</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DEMO / PRESENTACIÓN FINAL ===== -->
+        <section id="demo" class="seccion seccion-alterna">
+            <div class="seccion-encabezado">
+                <h2>Demo del proyecto</h2>
+                <p>El video de presentación final del curso, explicando el proyecto completo.</p>
+            </div>
+
+            <div class="video-caja">
+                <div class="video-marcador video-marcador-activo">
+                    <iframe
+                        width="100%"
+                        height="400"
+                        src="https://www.youtube.com/embed/JwZMnbl3tA0"
+                        title="Presentación final del proyecto"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-detalle">
+                    <h3>Sobre esta demo</h3>
+                    <p>En este video presento de manera general el proyecto desarrollado durante el curso, explicando su objetivo, las tecnologías utilizadas y las principales funcionalidades que ofrece el sitio web. Además, realizo un recorrido por las diferentes secciones, desde los temas y trabajos realizados a lo largo del curso hasta el laboratorio de librerías, donde se presentan y explican las herramientas utilizadas en el desarrollo del proyecto.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROYECTO FINAL ===== -->
+        <section id="proyecto" class="seccion">
+            <div class="seccion-encabezado">
+                <h2>Proyecto final</h2>
+                <p>Qué es, qué resuelve y con qué se construyó.</p>
+            </div>
+
+            <div class="proyecto-grid">
+                <div class="proyecto-item">
+                    <h3>Objetivo</h3>
+                    <p>Reunir en un solo sitio todo lo aprendido durante el curso de Compiladores, de forma visual e interactiva.</p>
+                </div>
+                <div class="proyecto-item">
+                    <h3>Problema que resuelve</h3>
+                    <p>Evita que el material del curso quede disperso: temas, trabajos y evaluaciones viven en un mismo lugar.</p>
+                </div>
+                <div class="proyecto-item">
+                    <h3>Tecnologías</h3>
+                    <p>HTML, CSS y JavaScript, sin frameworks ni dependencias externas.</p>
+                </div>
+                <div class="proyecto-item">
+                    <h3>Funcionalidades</h3>
+                    <p>Ruta de aprendizaje, buscador de temas, filtros, quiz interactivo, modo claro/oscuro y seguimiento de avance.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Asignatura de Compiladores</p>
+        <p>Página desarrollada Maycol Slon Buitrago</p>
+    </footer>
+
+    <script src="js/contenido.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
